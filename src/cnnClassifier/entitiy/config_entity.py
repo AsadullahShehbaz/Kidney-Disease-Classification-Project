@@ -12,17 +12,29 @@ from pathlib import Path
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
-    """
-    Configuration schema for the Data Ingestion stage.
-
-    Attributes:
-        root_dir (Path): Root directory for data ingestion artifacts.
-        source_url (str): URL of the dataset to be downloaded.
-        local_data_file (Path): Path where the downloaded file is saved.
-        unzip_dir (Path): Directory where extracted data will be stored.
-    """
-
     root_dir: Path
     source_url: str
     local_data_file: Path
     unzip_dir: Path
+
+@dataclass(frozen=True)
+class PrepareBaseModelConfig:
+    root_dir : Path
+    base_model_path : Path 
+    updated_base_model_path : Path 
+    params_image_size : list 
+    params_learning_rate : float 
+    params_include_top : bool 
+    params_weight : str 
+    params_classes : int 
+
+@dataclass(frozen=True)
+class TrainingConfig:
+    root_dir : Path 
+    trained_model_path : Path
+    updated_base_model_path : Path
+    training_data : Path
+    params_epochs : int 
+    params_batch_size : int 
+    params_is_augmentation : bool 
+    params_image_size : list 
