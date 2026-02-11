@@ -66,7 +66,7 @@ class DataIngestionTrainingPipeline:
 
 
 # Entry point for executing the pipeline stage
-if __name__ == "__name__":
+if __name__ == "__main__":
     try:
         # Log stage start
         logger.info(f">>>>> Stage {STAGE_NAME} started <<<<<<")

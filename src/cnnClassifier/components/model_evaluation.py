@@ -13,6 +13,14 @@ class Evaluation:
 
     def _valid_generator(self):
         # Image preprocessing settings
+        """
+        Create data generator for validation data
+        Normalizes pixel values, resizes images to (height, width), and loads them in batches
+        Validation data is loaded from disk in batches, not all at once - saves memory!
+        Automatic batching: No need to manually create batches
+        Real-time augmentation: Creates new variations on-the-fly
+        """
+        
         datagenerator_kwargs = dict(
             rescale=1./255,  # Normalize pixel values from [0,255] to [0,1]
             validation_split=0.30  # Reserve 30% of data for validation
@@ -45,6 +53,11 @@ class Evaluation:
     
     def evaluation(self):
         # Load the trained model
+        """
+        Evaluate a model on the validation set and store the evaluation metrics in self.score
+
+        Evaluates the model using the validation data generator and stores the loss and accuracy in self.score
+        """
         self.model = self.load_model(self.config.path_of_model)
         # Prepare validation data
         self._valid_generator()
@@ -58,6 +71,11 @@ class Evaluation:
         save_json(path=Path("scores.json"),data=scores)
 
     def log_into_mlflow(self):
+        """
+        Log the evaluation metrics and the model into MLflow
+
+        Logs the evaluation metrics into the current MLflow run and registers the model in the MLflow Model Registry if the tracking URI is not a file store
+        """
         mlflow.set_registry_uri(self.config.mlflow_uri)
 
         tracking_uri_type_store = urlparse(mlflow.get_tracking_uri()).scheme 
