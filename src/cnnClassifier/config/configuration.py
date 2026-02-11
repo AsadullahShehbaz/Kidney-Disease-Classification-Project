@@ -9,7 +9,10 @@ This module contains the ConfigurationManager class, which is responsible for:
 
 from cnnClassifier.constants import CONFIG_PATH_YAML, PARAMS_FILE_PATH
 from cnnClassifier.utils.common import read_yaml, create_directories
-from cnnClassifier.entitiy.config_entity import DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig
+from cnnClassifier.entitiy.config_entity import (DataIngestionConfig,
+                                                PrepareBaseModelConfig,
+                                                TrainingConfig,
+                                                EvaluationConfig)
 from pathlib import Path 
 import os 
 
@@ -44,7 +47,7 @@ class ConfigurationManager:
         for the Data Ingestion stage.
         """
         # Extract data ingestion configuration block
-        config = self.config.data_ingestion
+        config = self.config.data_ingestion 
 
         # Create directory for data ingestion artifacts
         create_directories([config.root_dir])
@@ -98,3 +101,16 @@ class ConfigurationManager:
         )
 
         return training_config 
+
+    def get_evaluation_config(self)-> EvaluationConfig:
+
+        eval_config = EvaluationConfig(
+            path_of_model="artifacts/training/model.keras",
+            training_data="artifacts/data_ingestion/kidney-ct-scan-image",
+            mlflow_uri="https://dagshub.com/asadullahcreative/Kidney-Disease-Classification-Project.mlflow",
+            all_params=self.params,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_batch_size=self.params.BATCH_SIZE
+        )
+
+        return eval_config
