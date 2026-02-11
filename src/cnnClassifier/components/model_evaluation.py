@@ -5,6 +5,8 @@ import mlflow.keras
 from urllib.parse import urlparse 
 from cnnClassifier.entitiy.config_entity import EvaluationConfig
 from cnnClassifier.utils.common import save_json
+from dotenv import load_dotenv
+load_dotenv()
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
         self.config = config  # Store config with model path, image size, batch size
