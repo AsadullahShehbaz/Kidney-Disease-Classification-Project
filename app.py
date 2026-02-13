@@ -230,8 +230,7 @@ if __name__ == "__main__":
         "app:app",                    # The FastAPI app to run
         host="0.0.0.0",        # Listen on all network interfaces (accessible from other devices)
                                # Use "127.0.0.1" for localhost only
-        port=8000,             # Port number (access at http://localhost:8000)
-        reload=False            # Auto-restart server when code changes (useful for development)
+        port=8000        # Port number (access at http://localhost:8000)           # Auto-restart server when code changes (useful for development)
                                # Set to False in production
     )
     
