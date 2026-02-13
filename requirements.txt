@@ -170,7 +170,6 @@ opentelemetry-semantic-conventions==0.60b1
 opt_einsum==3.4.0
 optree==0.18.0
 orjson==3.11.6
-packaging @ file:///C:/miniconda3/conda-bld/packaging_1761049137378/work
 pandas==2.3.3
 pandocfilters==1.5.1
 parso==0.8.5
