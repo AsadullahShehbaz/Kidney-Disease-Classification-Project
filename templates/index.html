@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Disease Classifier | VGG16 CNN</title>
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>Kidney Disease Classifier</h1>
+            </div>
+            <p class="subtitle">AI-Powered Medical Diagnosis using VGG16 CNN</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Info Section -->
+            <div class="info-section">
+                <h2><i class="fas fa-info-circle"></i> About This Tool</h2>
+                <p>
+                    This AI model uses <strong>VGG16 Convolutional Neural Network</strong> to analyze 
+                    kidney CT scan images and classify them as <strong>Normal</strong> or <strong>Tumor</strong>. 
+                    Upload a clear CT scan image for instant analysis.
+                </p>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <h2><i class="fas fa-upload"></i> Upload CT Scan Image</h2>
+                
+                <!-- Upload Form -->
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Drag & Drop or Click to Upload</h3>
+                        <p>Supported formats: JPG, JPEG, PNG</p>
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            name="file" 
+                            accept="image/*" 
+                            required
+                        >
+                    </div>
+                </form>
+
+                <!-- Image Preview -->
+                <div class="preview-section" id="previewSection" style="display: none;">
+                    <h3>Image Preview</h3>
+                    <div class="preview-container">
+                        <img id="imagePreview" src="" alt="Uploaded Image">
+                        <button class="btn-remove" id="removeBtn">
+                            <i class="fas fa-times"></i> Remove
+                        </button>
+                    </div>
+                    <button class="btn-predict" id="predictBtn">
+                        <i class="fas fa-brain"></i> Analyze Image
+                    </button>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div class="loader" id="loader" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing image with AI model...</p>
+                </div>
+
+                <!-- Result Section -->
+                <div class="result-section" id="resultSection" style="display: none;">
+                    <div class="result-card">
+                        <div class="result-icon" id="resultIcon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Prediction Result</h3>
+                        <div class="result-prediction" id="resultPrediction">
+                            <!-- Result will be inserted here -->
+                        </div>
+                        <p class="result-note">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>Disclaimer:</strong> This is an AI prediction tool for educational purposes. 
+                            Always consult a qualified medical professional for diagnosis.
+                        </p>
+                        <button class="btn-new" id="newPredictionBtn">
+                            <i class="fas fa-redo"></i> Analyze Another Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features-section">
+                <h2><i class="fas fa-star"></i> Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>VGG16 CNN</h3>
+                        <p>Deep learning model with 16 layers for accurate classification</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fast Prediction</h3>
+                        <p>Get results in seconds with optimized inference</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Upload</h3>
+                        <p>Your images are processed securely and not stored</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>High Accuracy</h3>
+                        <p>Trained on medical dataset for reliable predictions</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Kidney Disease Classifier | Powered by VGG16 CNN & FastAPI</p>
+            <p>Developed for Medical AI Research</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/static/js/script.js"></script>
+
+</body>
+</html>

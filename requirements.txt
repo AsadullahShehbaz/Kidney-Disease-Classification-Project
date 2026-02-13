@@ -4,6 +4,7 @@ aiohttp==3.13.3
 aiohttp-retry==2.9.1
 aiosignal==1.4.0
 alembic==1.18.3
+altair==6.0.0
 amqp==5.3.1
 annotated-doc==0.0.4
 annotated-types==0.7.0
@@ -20,10 +21,13 @@ asyncssh==2.22.0
 atpublic==7.0.0
 attrs==25.4.0
 babel==2.18.0
+backoff==2.2.1
 beautifulsoup4==4.14.3
 billiard==4.2.4
 bleach==6.3.0
 blinker==1.9.0
+boto3==1.42.45
+botocore==1.42.45
 cachetools==6.2.6
 celery==5.6.2
 certifi==2026.1.4
@@ -34,15 +38,19 @@ click-didyoumean==0.3.1
 click-plugins==1.1.1.2
 click-repl==0.3.0
 cloudpickle==3.1.2
-# Editable install with no version control (cnnClassifier==0.0.0)
--e d:\data science\codes\02 mlops\00 mlops project
+-e git+https://github.com/AsadullahShehbaz/Kidney-Disease-Classification-Project.git@ae5e94cfc1ac89ffde083e99f1be7d3e663aa1dd#egg=cnnClassifier
 colorama==0.4.6
 comm==0.2.3
 configobj==5.0.9
 contourpy==1.3.3
 cryptography==46.0.4
+curl_cffi==0.13.0
 cycler==0.12.1
+dacite==1.6.0
+dagshub==0.6.5
+dagshub-annotation-converter==0.1.16
 databricks-sdk==0.82.0
+dataclasses-json==0.6.7
 debugpy==1.8.20
 decorator==5.2.1
 defusedxml==0.7.1
@@ -72,6 +80,7 @@ flatten-dict==0.4.2
 flufl.lock==9.0.0
 fonttools==4.61.1
 fqdn==1.5.1
+frozendict==2.4.7
 frozenlist==1.8.0
 fsspec==2026.1.0
 funcy==2.0
@@ -81,6 +90,7 @@ gitdb==4.0.12
 GitPython==3.1.46
 google-auth==2.48.0
 google-pasta==0.2.0
+gql==4.0.0
 grandalf==0.8
 graphene==3.4.3
 graphql-core==3.2.7
@@ -104,6 +114,7 @@ iterative-telemetry==0.0.10
 itsdangerous==2.2.0
 jedi==0.19.2
 Jinja2==3.1.6
+jmespath==1.1.0
 joblib==1.5.3
 json5==0.13.0
 jsonpointer==3.0.0
@@ -123,10 +134,12 @@ kiwisolver==1.4.9
 kombu==5.6.2
 lark==1.3.1
 libclang==18.1.1
+lxml==6.0.2
 Mako==1.3.10
 Markdown==3.10.1
 markdown-it-py==4.0.0
 MarkupSafe==3.0.3
+marshmallow==3.26.2
 matplotlib==3.10.8
 matplotlib-inline==0.2.1
 mdurl==0.1.2
@@ -136,7 +149,10 @@ mlflow==3.9.0
 mlflow-skinny==3.9.0
 mlflow-tracing==3.9.0
 multidict==6.7.1
+multitasking==0.0.12
+mypy_extensions==1.1.0
 namex==0.1.0
+narwhals==2.16.0
 nbclient==0.10.4
 nbconvert==7.17.0
 nbformat==5.10.4
@@ -146,6 +162,7 @@ notebook==7.5.3
 notebook_shim==0.2.4
 numpy==2.4.2
 omegaconf==2.3.0
+opencv-python==4.13.0.92
 opentelemetry-api==1.39.1
 opentelemetry-proto==1.39.1
 opentelemetry-sdk==1.39.1
@@ -158,6 +175,8 @@ pandas==2.3.3
 pandocfilters==1.5.1
 parso==0.8.5
 pathspec==0.12.1
+pathvalidate==3.3.1
+peewee==3.19.0
 pillow==12.1.0
 platformdirs==4.5.1
 prettytable==3.17.0
@@ -174,6 +193,7 @@ pycparser==3.0
 pydantic==2.12.5
 pydantic-settings==2.12.0
 pydantic_core==2.41.5
+pydeck==0.9.1
 pydot==4.0.1
 pygit2==1.19.1
 Pygments==2.19.2
@@ -184,6 +204,7 @@ python-box==7.3.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.1
 python-json-logger==4.0.0
+python-multipart==0.0.22
 pytz==2025.2
 pywin32==311
 pywinpty==3.0.2
@@ -191,6 +212,7 @@ PyYAML==6.0.3
 pyzmq==27.1.0
 referencing==0.37.0
 requests==2.32.5
+requests-toolbelt==1.0.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rfc3987-syntax==1.1.0
@@ -198,6 +220,7 @@ rich==14.3.2
 rpds-py==0.30.0
 rsa==4.9.1
 ruamel.yaml==0.19.1
+s3transfer==0.16.0
 scikit-learn==1.8.0
 scipy==1.17.0
 scmrepo==3.6.1
@@ -217,7 +240,9 @@ sqlparse==0.5.5
 sqltrie==0.11.2
 stack-data==0.6.3
 starlette==0.50.0
+streamlit==1.53.1
 tabulate==0.9.0
+tenacity==9.1.2
 tensorboard==2.20.0
 tensorboard-data-server==0.7.2
 tensorflow==2.20.0
@@ -225,11 +250,14 @@ termcolor==3.3.0
 terminado==0.18.1
 threadpoolctl==3.6.0
 tinycss2==1.4.0
+toml==0.10.2
 tomlkit==0.14.0
 tornado==6.5.4
 tqdm==4.67.2
 traitlets==5.14.3
+treelib==1.8.0
 typer==0.21.1
+typing-inspect==0.9.0
 typing-inspection==0.4.2
 typing_extensions==4.15.0
 tzdata==2025.3
@@ -240,13 +268,16 @@ uvicorn==0.40.0
 vine==5.1.0
 voluptuous==0.16.0
 waitress==3.0.2
+watchdog==6.0.0
 wcwidth==0.5.3
 webcolors==25.10.0
 webencodings==0.5.1
 websocket-client==1.9.0
+websockets==16.0
 Werkzeug==3.1.5
 wheel==0.46.3
 wrapt==2.1.0
 yarl==1.22.0
+yfinance==1.1.0
 zc.lockfile==4.0
 zipp==3.23.0

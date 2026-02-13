@@ -8,9 +8,22 @@ STAGE_NAME = "Evaluation Stage"
 class EvaluationPipeline: 
 
     def __init__(self):
+        """
+        Initializes the EvaluationPipeline class.
+
+        This class is responsible for evaluating a model that has been trained and saving the evaluation metrics to a JSON file.
+
+        :return: None
+        """
         pass 
 
     def main(self):
+        """
+        Evaluate a model and save the evaluation metrics to a JSON file.
+
+        :return: None
+        """
+        
         config = ConfigurationManager()
         eval_config = config.get_evaluation_config()
         evaluation = Evaluation(config=eval_config)
