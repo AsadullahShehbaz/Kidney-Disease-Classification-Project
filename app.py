@@ -231,7 +231,7 @@ if __name__ == "__main__":
         host="0.0.0.0",        # Listen on all network interfaces (accessible from other devices)
                                # Use "127.0.0.1" for localhost only
         port=8000,             # Port number (access at http://localhost:8000)
-        reload=True            # Auto-restart server when code changes (useful for development)
+        reload=False            # Auto-restart server when code changes (useful for development)
                                # Set to False in production
     )
     
