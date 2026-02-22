@@ -1,5 +1,5 @@
 # 🏥 Kidney Disease Classification - Deep Learning Project
-### Complete Guide for Beginners | VGG16 CNN Classifier with MLflow & DVC
+### Complete Detail | VGG16 CNN Classifier with MLflow & DVC
 
 ---
 
